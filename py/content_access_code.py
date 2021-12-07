@@ -1,6 +1,6 @@
 """Code to access thorwhalen/content data with ease"""
 
-otosense_content_url = 'https://raw.githubusercontent.com/thorwhalen/content/main/{}'.format
+content_url = 'https://raw.githubusercontent.com/thorwhalen/content/main/{}'.format
 
 def get_content_bytes(key, max_age=None):
     """Get bytes of content from `thorwhalen/content`, automatically caching locally.
@@ -11,7 +11,7 @@ def get_content_bytes(key, max_age=None):
     ```
     """
     from graze import graze
-    return graze(otosense_content_url(key), max_age=max_age)
+    return graze(content_url(key), max_age=max_age)
 
 def get_table(key, max_age=None, **extra_pandas_kwargs):
     """Get pandas dataframe from `thorwhalen/content`, automatically caching locally.
@@ -22,6 +22,6 @@ def get_table(key, max_age=None, **extra_pandas_kwargs):
     """
     import pandas as pd
     import io
-    b = get_otosense_content_bytes(key, max_age=max_age)
+    b = get_content_bytes(key, max_age=max_age)
     if key.endswith('.csv'):
         return pd.read_csv(io.BytesIO(b), **extra_pandas_kwargs)

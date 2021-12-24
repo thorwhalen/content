@@ -1,6 +1,7 @@
 """Code to access thorwhalen/content data with ease"""
 
-content_url = 'https://raw.githubusercontent.com/thorwhalen/content/main/{}'.format
+branch = 'master'
+content_url = ('https://raw.githubusercontent.com/thorwhalen/content/' + branch + '/{}').format
 
 def get_content_bytes(key, max_age=None):
     """Get bytes of content from `thorwhalen/content`, automatically caching locally.

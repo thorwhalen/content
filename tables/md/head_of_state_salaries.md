@@ -168,3 +168,10 @@
 | Haiti                             |         3782 |
 | São Tomé and Príncipe             |         2930 |
 | Laos                              |         1630 |
+
+# References
+
+Data taken from: https://en.wikipedia.org/wiki/List_of_salaries_of_heads_of_state_and_government
+
+Code to extract and process the data in [this gist](https://gist.github.com/thorwhalen/8856e280c8116c5043bd7fb4c72da181)
+
